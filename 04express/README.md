@@ -42,5 +42,22 @@
       - 第三方中间件
         - body-parser 第三方中间件。 express.urlencoded中间件就是基于body-parser第三方中间件封装的
   - Express写接口
+    - get接口
+    - post接口
+  - CORS跨域资源共享
+    - cors请求的分类
+      - 根据请求方式和请求头的不同，可将CORS的请求分为2大类
+        + 简单请求
+          + 客户端与服务器之间只会发生一次请求
+          + 请求方式：GET、POST、HEAD
+        + 预检请求：在浏览器与服务器正式通信之前，浏览器会发送OPTION请求进行预检，以获知服务器是否允许该实际请求。
+          + 客户端和服务端会发生两次请求，OPTION预检请求成功之后，才会发起真正请求
+          + 请求方式：GET、POST、HEAD之外的需求Method类型
+          + 请求头中包含了自定义头部字段
+          + 向服务器发送了 application/json 格式的数据
+  - JSONP接口
+    - JSONP不属于真正的AJAX请求，因为没有使用XMLHttpRequest这个对象
+    - JSONP仅支持GET请求
+    - 项目中配置了CORS跨域资源共享，必须在CORS中间件之前声明JSONP的接口，否则JSONP接口会被开启成CORS的接口
 
 

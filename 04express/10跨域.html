@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    function queryGet() {
+      $.ajax({
+        type: 'GET',
+        url: 'http://127.0.0.1/api/user/list',
+        data: {
+          name: 'zs',
+          age: 20
+        },
+        success: function(res) {
+          console.info('get', res)
+        }
+      })
+    }
+    queryGet()
+    function queryPost() {
+      $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1/api/user/add',
+        data: {
+          name: 'zs2',
+          age: 22
+        },
+        success: function(res) {
+          console.info('post', res)
+        }
+      })
+    }
+    queryPost()
+    function queryJOSNP() {
+      $.ajax({
+        method: 'GET',
+        url: 'http://127.0.0.1/api/user/add',
+        dataType: 'jsonp',
+        success: function(res) {
+          console.info(res)
+        }
+      })
+    }
+  </script>
+</body>
+</html>
