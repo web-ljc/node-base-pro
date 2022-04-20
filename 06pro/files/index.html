@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+  <script>
+    function queryPost() {
+      $.ajax({
+        type: 'POST',
+        url: 'http://127.0.0.1/api/login',
+        data: {
+          username: 'admin',
+          password: '000000'
+        },
+        success: function(res) {
+          console.info('post', res)
+        }
+      })
+    }
+    queryPost()
+  </script>
+</body>
+</html>
